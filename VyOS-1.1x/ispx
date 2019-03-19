@@ -1,11 +1,11 @@
+configure
+
 # Change the site number to the current site being set up.
 SITE_NUMBER=1
 
 # OSPF authentication details should be same on all ISP routers.
 OSPF_MD5_KEYID=1
 OSPF_MD5_KEY=changeme
-
-configure
 
 set system host-name "isp$SITE_NUMBER"
 
@@ -30,3 +30,6 @@ set protocols ospf area 0 network '192.168.122.0/24'
 set protocols ospf passive-interface 'default'
 set protocols ospf passive-interface-exclude 'eth0'
 set protocols ospf redistribute 'static'
+
+commit
+save
