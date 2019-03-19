@@ -1,0 +1,22 @@
+# Start configuration. {
+configure
+
+# Change the site number to the current site being set up.
+SITE_NUMBER=1
+
+set system host-name "s$SITE_NUMBER-r1"
+
+set interfaces ethernet eth0 description "uplink isp$SITE_NUMBER"
+set interfaces ethernet eth0 address "100.127.$SITE_NUMBER.2/30"
+
+# Source NAT for the private ip addresses.
+set nat source rule 1 outbound-interface 'eth0'
+set nat source rule 1 source address "10.$SITE_NUMBER.0.0/16"
+set nat source rule 1 translation address 'masquerade'
+
+# Default route to the ISP router.
+set protocols static route 0.0.0.0/0 next-hop "100.127.$SITE_NUMBER.1"
+
+commit
+save
+# End configuration. }
