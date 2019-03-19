@@ -5,6 +5,8 @@ SITE_NUMBER=1
 OSPF_MD5_KEYID=1
 OSPF_MD5_KEY=changeme
 
+configure
+
 set system host-name "isp$SITE_NUMBER"
 
 set interfaces ehternet eth0 description 'uplink internet'
