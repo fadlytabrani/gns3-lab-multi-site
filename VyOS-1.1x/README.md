@@ -5,5 +5,5 @@ It is advisable to clear the configuration of the device prior applying the conf
     # Clear all configurations and reboot.
     rm /config/config.boot; reboot now
 
-## Application
+## Configuration Steps
 Copy and paste the configuration code into the device consoles. Take note of variables that need to be set within the configuration code.
