@@ -9,6 +9,9 @@ set system host-name "s$SITE_NUMBER-r1"
 set interfaces ethernet eth0 description "uplink isp$SITE_NUMBER"
 set interfaces ethernet eth0 address "100.127.$SITE_NUMBER.2/30"
 
+set interfaces ethernet eth1 description "subnet test"
+set interfaces ethernet eth1 address "10.$SITE_NUMBER.1.1/24"
+
 # Source NAT for the private ip addresses.
 set nat source rule 1 outbound-interface 'eth0'
 set nat source rule 1 source address "10.$SITE_NUMBER.0.0/16"
