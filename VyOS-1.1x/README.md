@@ -6,4 +6,4 @@ It is advisable to clear the configuration of the device prior applying the conf
     rm /config/config.boot; reboot now
 
 ## Configuration Steps
-Copy and paste the configuration code into the device consoles. Take note of variables that need to be set within the configuration code.
+Copy and paste the configuration code onto the device console. Take note of variables that need to be set within the configuration code.
