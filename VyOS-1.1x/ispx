@@ -30,6 +30,7 @@ set protocols ospf area 0 authentication 'md5'
 set protocols ospf area 0 network '192.168.122.0/24'
 set protocols ospf passive-interface 'default'
 set protocols ospf passive-interface-exclude 'eth0'
+set protocols ospf redistribute 'connected'
 set protocols ospf redistribute 'static'
 
 commit
