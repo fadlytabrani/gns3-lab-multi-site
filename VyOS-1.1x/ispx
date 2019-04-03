@@ -26,6 +26,7 @@ set nat source rule 1 translation address 'masquerade'
 set protocols static route "100.127.$SITE_NUMBER.0/24" next-hop "100.127.$SITE_NUMBER.2"
 
 # OSPF for ISP interconnectivity.
+set protocols ospf parameters router-id "100.127.$SITE_NUMBER.1"
 set protocols ospf area 0 authentication 'md5'
 set protocols ospf area 0 network '192.168.122.0/24'
 set protocols ospf passive-interface 'default'
