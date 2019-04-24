@@ -5,6 +5,7 @@ configure
 SITE_NUMBER=1
 
 set system host-name "s$SITE_NUMBER-r1"
+set service ssh port 22
 
 set interfaces ethernet eth0 description "uplink isp$SITE_NUMBER"
 set interfaces ethernet eth0 address "100.127.$SITE_NUMBER.2/30"
