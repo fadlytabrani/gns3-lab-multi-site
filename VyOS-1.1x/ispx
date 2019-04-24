@@ -9,6 +9,7 @@ OSPF_MD5_KEYID=1
 OSPF_MD5_KEY=changeme
 
 set system host-name "isp$SITE_NUMBER"
+set service ssh port 22
 
 set interfaces ethernet eth0 description 'uplink internet'
 set interfaces ethernet eth0 address 'dhcp'
