@@ -38,3 +38,6 @@ ip access-list extended source-nat
 
 line vty 0 4
  privilege level 15
+ exit
+
+wr
