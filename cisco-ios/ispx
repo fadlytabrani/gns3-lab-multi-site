@@ -1,0 +1,40 @@
+! Use the following variable refernces to replace on ya text editor. 
+
+! SITE_NUMBER = 1
+! OSPF_MD5_KEY=changeme
+! EXTERNAL_IF=FastEthernet0/0
+! INTERNAL_IF=FastEthernet1/0
+
+interface <EXTERNAL_IF>
+ ip address dhcp
+ ip nat enable
+ ip ospf authentication message-digest
+ ip ospf authentication-key <OSPF_MD5_KEY>
+ no shutdown
+ exit
+
+interface <INTERNAL_IF>
+ ip address 100.127.<SITE_NUMBER>.1 255.255.255.252
+ ip nat enable
+ no shutdown
+ exit
+
+router ospf 10
+ router-id 100.127.<SITE_NUMBER>.1
+ redistribute static subnets
+ passive-interface default
+ no passive-interface <EXTERNAL_IF>
+ network 0.0.0.0 255.255.255.255 area 0
+ exit
+ 
+ip route 100.127.<SITE_NUMBER>.0 255.255.255.0 100.127.<SITE_NUMBER>.2
+
+ip nat source list source-nat interface <EXTERNAL_IF> overload
+ 
+ip access-list extended source-nat
+ deny   ip any 100.64.0.0 0.63.255.255
+ permit ip 100.127.<SITE_NUMBER>.0 0.0.0.255 any
+ exit
+
+line vty 0 4
+ privilege level 15
