@@ -40,4 +40,4 @@ line vty 0 4
  privilege level 15
  exit
 
-wr
+do wr
