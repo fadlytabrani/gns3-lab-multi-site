@@ -1,9 +1,9 @@
 ! Use the following variable refernces to replace on ya text editor. 
 
-! SITE_NUMBER = 1
-! OSPF_MD5_KEY=changeme
-! EXTERNAL_IF=FastEthernet0/0
-! INTERNAL_IF=FastEthernet1/0
+! <SITE_NUMBER> = 1
+! <OSPF_MD5_KEY> = changeme
+! <EXTERNAL_IF> = FastEthernet0/0
+! <INTERNAL_IF> =FastEthernet1/0
 
 interface <EXTERNAL_IF>
  ip address dhcp
